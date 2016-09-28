@@ -16,6 +16,8 @@ public class EchoServer3 {
 	
 	public static void main(String[] args) {
 		ServerSocket serverSocket = null;
+		PrintWriter[] pwArray = new PrintWriter[2];
+		int count=0;
 		
 		try {
 			//1. Server Socket 생성
@@ -30,8 +32,9 @@ public class EchoServer3 {
 				// 3. Accept
 				Socket socket = serverSocket.accept();
 
-				Thread thread = new EchoServerReceiveThread( socket );
+				Thread thread = new EchoServerReceiveThread( socket, pwArray ,count );
 				thread.start();
+				count++;
 			}
 		} catch( IOException ex ) {
 			log( "error:" + ex );
