@@ -54,16 +54,6 @@ public class Taewan {
 			
 			System.out.println("<<" + data2 );
 			
-//			byte[] buffer = new byte[256];
-//			int readByteCount = is.read( buffer );
-//			if( readByteCount == -1 ){
-//				System.out.println("[client] closed by server");
-//				return;
-//			}
-//			
-//			data = new String( buffer, 0, readByteCount, "UTF-8");
-//			
-//			System.out.println("<<" + data);
 			}
 		} catch (IOException e) {
 			e.printStackTrace();

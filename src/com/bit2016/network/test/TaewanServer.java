@@ -1,4 +1,4 @@
-package com.bit2016.network.echo;
+package com.bit2016.network.test;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,13 +12,13 @@ import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketException;
+import java.util.Scanner;
 
-
-public class EchoServer2 {
+public class TaewanServer {
 private static final int PORT = 5003;
 	
 	public static void main(String[] args) {
-		
+		Scanner scanner = new Scanner(System.in);
 		ServerSocket serverSocket = null;
 		try {
 			// 1. 서버소켓 생성
@@ -58,8 +58,10 @@ private static final int PORT = 5003;
 					}
 					
 					System.out.println("[server] received:" + data );
+					System.out.print(">> ");
 					// 6. 쓰기
-					pw.println( data );
+					String data2 = scanner.nextLine();
+					pw.println( data2 );
 					//pw.print( data + "\n" );
 					}
 				} catch( SocketException ex ){
@@ -90,5 +92,4 @@ private static final int PORT = 5003;
 		}
 
 	}
-
 }
