@@ -12,7 +12,7 @@ import java.net.SocketException;
 
 public class EchoServerReceiveThread extends Thread {
 	private Socket socket;
-	private PrintWriter[] pw = null;
+	//List<PrintWriter> list = new List();
 	private int count = 0;
 
 	public EchoServerReceiveThread( Socket socket ) {
@@ -23,7 +23,7 @@ public class EchoServerReceiveThread extends Thread {
 		this.socket = socket;
 		try {
 			pw[count] = new PrintWriter( new OutputStreamWriter( socket.getOutputStream(), "UTF-8" ), true );
-			this.pw = pw;
+			//this.pw = pw;
 			this.count = count;
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
@@ -52,7 +52,7 @@ public class EchoServerReceiveThread extends Thread {
 				}
 				
 				EchoServer3.log( "received:" + data );
-				pw[count].println( data );
+				//pw[count].println( data );
 			}
 		} catch( SocketException ex ){
 			EchoServer3.log( "abnormal closed by client" );
