@@ -46,7 +46,7 @@ public class ChatClient {
 			
 			//7.input message
 			while( true ) {
-				if( scanner.hasNextLine() == false ) {
+				if( scanner.hasNextLine() == false ) { //
 					continue;
 				}
 				
